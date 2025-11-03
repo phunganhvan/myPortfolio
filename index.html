@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./bootstrap/bootstrapCss.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <style>
+    .container {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+      margin-bottom: 100px;
+    }
+
+
+
+    .play-button {
+      width: 160px;
+      height: 56px;
+      padding: 10px 20px;
+      color: black;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      font-size: 24px;
+      transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .play-button:hover {
+      background: #00ff00 !important;
+      /* Màu xanh lá */
+      transform: scale(1.2);
+    }
+
+    button {
+      margin-left: 150px;
+      border-radius: 18px !important;
+      height: auto;
+    }
+
+    .info button a {
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    /* === Tags === */
+    .tags {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .tags ul {
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    .tags ul li {
+      list-style-type: none;
+      display: inline-block;
+      background: #333;
+      color: #fff;
+      padding: 6px 16px;
+      margin: 5px;
+      border-radius: 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .tags {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 60px;
+    }
+
+    .tags ul {
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    .tags ul li {
+      display: inline-block;
+      background: #eb5353;
+      color: #fff;
+      font-weight: 600;
+      padding: 10px 20px;
+      margin: 8px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 14px;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .tags ul li:hover {
+      background: #00ff00;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 40px auto;
+      width: 80%;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .large-image {
+        max-height: none;
+        /* Không giới hạn chiều cao trên mobile */
+      }
+
+      .large-image img {
+        height: auto;
+      }
+
+      .anhNho img {
+        width: 100px;
+        height: 70px;
+      }
+
+      .info {
+        width: 90%;
+      }
+    }
+
+    .Image {
+      flex: 1;
+      min-width: 400px;
+    }
+
+    /* === ẢNH CHÍNH - hiển thị full chiều dài === */
+    .large-image {
+      width: 100%;
+      max-height: 80vh;
+      /* Chiều cao tối đa theo màn hình */
+      overflow-y: auto;
+      /* Cho phép cuộn dọc nếu ảnh quá dài */
+      border-radius: 12px;
+      border: 1px solid #ccc;
+    }
+
+    .large-image img {
+      width: 100%;
+      height: auto;
+      /* Giữ nguyên tỉ lệ ảnh */
+      display: block;
+      border-radius: 12px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .large-image img:hover {
+      transform: scale(1.02);
+    }
+
+    /* === ẢNH NHỎ === */
+    .anhNho {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .anhNho img {
+      width: 120px;
+      height: 80px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out, opacity 0.3s;
+      object-fit: cover;
+    }
+
+    .anhNho img:hover {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  </style>
+  <div class="boxHead">
+    <div class="header">
+      <div class="row">
+        <div class="col-xl-4">
+          <nav>
+            <div class="GName">
+              PHUNG ANH VAN <sub>WEB DEVELOPER</sub>
+            </div>
+          </nav>
+        </div>
+        <div class="col-xl-8">
+          <ul class="list">
+            <li class="new"><a href="./about.html">ABOUT_ME</a></li>
+            <li class="new"><a href="./portfolio.html">PORTFOLIO</a></li>
+            <li class="new"><a href="./cv.html">CV</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="Image">
+            <div class="large-image">
+              <img id="anhLon" src="./image/myprojectnodeexpress.vercel.app_.png" alt="Main Image">
+            </div>
+            <div class="anhNho">
+              <img src="./image/myprojectnodeexpress.vercel.app_.png" alt="Thumbnail 1"
+                onclick="changeImage('./image/myprojectnodeexpress.vercel.app_.png')">
+              <img src="./image/localhost_3000_products.png" alt="Thumbnail 2"
+                onclick="changeImage('./image/localhost_3000_products.png')">
+              <img src="./image/localhost_3000_blogs.png" alt="Thumbnail 3"
+                onclick="changeImage('./image/localhost_3000_blogs.png')">
+              <img src="./image/localhost_3000_cart.png" alt="Thumbnail 4"
+                onclick="changeImage('./image/localhost_3000_cart.png')">
+              <img src="./image/myprojectnodeexpress.vercel.app_admin_dashboard.png" alt="Thumbnail 1"
+                onclick="changeImage('./image/myprojectnodeexpress.vercel.app_admin_dashboard.png')">
+              <img src="./image/myprojectnodeexpress.vercel.app_admin_products_page=1.png" alt="Thumbnail 1"
+                onclick="changeImage('./image/myprojectnodeexpress.vercel.app_admin_products_page=1.png')">
+              <img src="./image/myprojectnodeexpress.vercel.app_admin_settings_general.png" alt="Thumbnail 1"
+                onclick="changeImage('./image/myprojectnodeexpress.vercel.app_admin_settings_general.png')">
+            </div>
+          </div>
+          <div class="tags">
+            <ul>
+              <li class="tag"><i class="fa-brands fa-google"></i> WEB APPLICATION</li>
+              <li class="tag"><i class="fa-brands fa-node-js"></i> NodeJs + Express</li>
+              <li class="tag"><i class="fa-solid fa-comment-dots"></i> REALTIME CHAT</li>
+              <li class="tag"><i class="fa-solid fa-coins"></i> E-COMMERCE</li>
+              <li class="tag"><i class="fa-brands fa-critical-role"></i> USER ROLES & PERMISSIONS</li>
+            </ul>
+            <ul>
+              <li class="tag">MADE WITH NODE.JS & EXPRESS</li>
+              <li class="tag"><i class="fa-solid fa-database"></i> MONGODB + CLOUDINARY</li>
+              <li class="tag">PUG.JS + BOOTSTRAP</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="info">
+            <hr>
+            <h2>TECH E-COMMERCE WEBSITE</h2>
+            <hr>
+            <h5><strong>DESCRIPTION:</strong></h5>
+            <p>
+              A server-side rendered (SSR) web platform built using <strong>Node.js</strong> and the
+              <strong>Express</strong> framework, allowing users to explore and purchase the latest tech products
+              such as smartphones, laptops, and accessories. The website includes real-time chat, friend connections,
+              and group chat features for customers to communicate and share experiences.
+            </p>
+
+            <h5><strong>TASK:</strong></h5>
+            <ul>
+              <li>Solo Developer</li>
+              <li>Full-stack Web Developer</li>
+              <li>Responsible for backend logic, data validation, and routing with Express</li>
+              <li>Implemented front-end using <strong>Pug.js</strong> and <strong>Bootstrap</strong> for a modern
+                responsive interface</li>
+              <li>Integrated <strong>MongoDB</strong> for data storage and <strong>Cloudinary</strong> for image hosting
+              </li>
+            </ul>
+
+            <h5><strong>DEVELOPMENT DURATION: </strong> 1 Month</h5>
+            <h5> <strong>TECHNOLOGIES USED:</strong> </h5>
+            <p>- Node.js, Express, Pug.js, MongoDB, Cloudinary, Bootstrap</p>
+            <h5> <strong>PROJECT SCOPE: </strong></h5>
+            <p>- "Lap trinh Web" Course Project</p>
+
+            <h5> <strong>DATE: </strong>November 3, 2025</h5>
+            <button class="play-button"
+              style="padding: 10px 20px; background: white; color: black; border: none; border-radius: 5px; cursor: pointer; margin-top: 15px"><a
+                href="https://myprojectnodeexpress.vercel.app/" target="_blank">Try on Vercel</a></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="Image">
+            <div class="large-image">
+              <img id="anhLon1" src="./image/project-react-js-indol.vercel.app_.png" alt="Main Image">
+            </div>
+            <div class="anhNho">
+              <img src="./image/project-react-js-indol.vercel.app_.png" alt="Thumbnail 1"
+                onclick="changeImages('./image/project-react-js-indol.vercel.app_.png')">
+              <img src="./image/project-react-js-indol.vercel.app_DaiSo.png" alt="Thumbnail 2"
+                onclick="changeImages('./image/project-react-js-indol.vercel.app_DaiSo.png')">
+              <img src="./image/project-react-js-indol.vercel.app_GiaiTich.png" alt="Thumbnail 3"
+                onclick="changeImages('./image/project-react-js-indol.vercel.app_GiaiTich.png')">
+                <img src="./image/teacher.png" alt="Thumbnail 3"
+                onclick="changeImages('./image/teacher.png')">
+                <img src="./image/create.png" alt="Thumbnail 3"
+                onclick="changeImages('./image/create.png')">
+                <img src="./image/edit.png" alt="Thumbnail 3"
+                onclick="changeImages('./image/edit.png')">
+            </div>
+          </div>
+          <div class="tags">
+            <ul>
+              <li class="tag"><i class="fa-brands fa-google"></i> WEB APPLICATION</li>
+              <li class="tag">STUDY PLATFORM</li>
+              <li class="tag"><i class="fa-brands fa-react"></i> REACTJS</li>
+              <li class="tag">STATE MANAGEMENT</li>
+              <li class="tag">MOCK API</li>
+            </ul>
+            <ul>
+              <li class="tag">REACT REDUX</li>
+              <li class="tag"><i class="fa-solid fa-route"></i> REACT ROUTER DOM</li>
+              <li class="tag">JSON-SERVER</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="info">
+            <hr>
+            <h2>MATHEMATICS QUESTION BANK</h2>
+            <hr>
+            <p class="subtext">Made in 36 hours — April 2025</p>
+
+            <h5><strong>DESCRIPTION:</strong></h5>
+            <p>
+              An online platform for practicing Algebra and Calculus. The system provides
+              a diverse collection of questions with automatic grading to help students
+              strengthen their mathematical skills and prepare for exams efficiently.
+            </p>
+
+            <h5><strong>TASK:</strong></h5>
+            <ul>
+              <li>Solo Developer</li>
+              <li>Front-End Web Developer</li>
+              <li>Built using <b>ReactJS</b> and <b>React Redux</b> for state management</li>
+              <li>Used <b>React Router DOM</b> for page navigation</li>
+              <li>Implemented <b>json-server</b> as a fake API to simulate backend responses</li>
+              <li>Designed a data-driven UI with modern front-end architecture</li>
+            </ul>
+
+            <h5><strong>DEVELOPMENT DURATION: </strong> 36 hours</h5>
+
+            <h5><strong>TECHNOLOGIES USED:</strong></h5>
+            <p>
+              - ReactJS, React Redux, React Router DOM, json-server (Fake API), HTML, CSS
+            </p>
+
+            <h5><strong>PROJECT SCOPE:</strong></h5>
+            <p>- Personal Portfolio / Study SPA (React-based)</p>
+
+            <button class="play-button"
+              style="padding: 10px 20px; background: white; color: black; border: none; border-radius: 5px; cursor: pointer; margin-top: 15px"><a
+                href="https://project-react-js-indol.vercel.app/" target="_blank">Try on Vercel</a></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="Image">
+            <div class="large-image">
+              <img id="anhLon2" src="./image/bai-tap-lon-cua-toi-8wto.vercel.app_.png" alt="Main Image">
+            </div>
+            <div class="anhNho">
+              <img src="./image/bai-tap-lon-cua-toi-8wto.vercel.app_.png" alt="Thumbnail 1"
+                onclick="changeImagess('./image/bai-tap-lon-cua-toi-8wto.vercel.app_.png')">
+              <img src="./image/bai-tap-lon-cua-toi-8wto.vercel.app_sanPham.html.png" alt="Thumbnail 2"
+                onclick="changeImagess('./image/bai-tap-lon-cua-toi-8wto.vercel.app_sanPham.html.png')">
+              <img src="./image/bai-tap-lon-cua-toi-8wto.vercel.app_sanPham.html (1).png" alt="Thumbnail 3"
+                onclick="changeImagess('./image/bai-tap-lon-cua-toi-8wto.vercel.app_sanPham.html (1).png')">
+              <img src="./image/bai-tap-lon-cua-toi-8wto.vercel.app_chiTietSanPham1.html.png" alt="Thumbnail 4"
+                onclick="changeImagess('./image/bai-tap-lon-cua-toi-8wto.vercel.app_chiTietSanPham1.html.png')">
+            </div>
+          </div>
+          <div class="tags">
+            <ul>
+              <li class="tag">FRONT-END</li>
+              <li class="tag"><i class="fa-brands fa-html5"></i> HTML</li>
+              <li class="tag"><i class="fa-brands fa-css3-alt"></i> CSS</li>
+              <li class="tag"><i class="fa-brands fa-square-js"></i> JAVASCRIPT</li>
+              <li class="tag"><i class="fa-brands fa-bootstrap"></i> BOOTSTRAP</li>
+            </ul>
+            <ul>
+              <li class="tag">Made with pure HTML/CSS + Javascript</li>
+              <li class="tag">First project</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="info">
+            <hr>
+            <h2>SWEETCAKE WEBSITE</h2>
+            <hr>
+
+            <h5><strong>DESCRIPTION:</strong></h5>
+            <p>
+              "SweetCake Website" is a visually appealing bakery site designed to showcase products and provide key
+              information to customers.
+              The demo version includes 3 pages (home, product, detail product, work in progress).<br><br>
+              The website focuses on using pure <strong>HTML</strong> and <strong>CSS</strong> to create a clean,
+              visually appealing interface,
+              demonstrating a solid understanding of front-end fundamentals.
+              In addition, <strong>JavaScript</strong> is applied to handle basic website logic such as search and
+              interactive elements,
+              while <strong>Bootstrap</strong> is used to optimize layout structure.
+            </p>
+
+            <h5><strong>TASK:</strong></h5>
+            <ul>
+              <li>Solo Developer</li>
+              <li>Web Developer using pure HTML/CSS, JavaScript, Bootstrap</li>
+              <li>Responsible for front-end design and website logic (search, interactions, responsive layout)</li>
+            </ul>
+
+            <h5><strong>DEVELOPMENT DURATION:</strong> 3 Days</h5>
+
+            <h5><strong>TECHNOLOGIES USED:</strong></h5>
+            <p>- HTML, CSS, JavaScript, Bootstrap</p>
+
+            <h5><strong>PROJECT SCOPE:</strong></h5>
+            <p>- “Basic Web Design” Course Project</p>
+
+            <h5><strong>DATE:</strong> November 5–8, 2024</h5>
+
+            <button class="play-button"
+              style="padding: 10px 20px; background: white; color: black; border: none; border-radius: 5px; cursor: pointer; margin-top: 15px;">
+              <a href="https://bai-tap-lon-cua-toi-8wto.vercel.app/" target="_blank">Try on Vercel</a>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="container" style="height: 50px; margin-bottom:10px;">
+    <div class="tags">
+      <hr style="height: 1px !important; width: 200%; margin-left: -80px">
+      <div class="icons" style="background-color: var(--color-body); display: flex; margin-top: -10px">
+        <div class="icon"
+          style="width: 50px; height: 50px; margin: 16px; margin-left: 440px; padding: 10px; background-color: white; border-radius: 12px;">
+          <a href="https://github.com/phunganhvan"><i class="fa-brands fa-github"
+              style="z-index: 100000; color: black; font-size: 30px; margin-left:2px;"></i></a>
+        </div>
+        <div class="icon"
+          style="width: 50px; height: 50px;margin: 16px; margin-left: 25px; padding: 10px; background-color: white; border-radius: 12px;">
+          <a href="https://www.facebook.com/phung.van.980336"><i class="fa-brands fa-square-facebook"
+              style="z-index: 100000; color: blue; font-size: 30px; margin-left:2px;"></i></a>
+        </div>
+        <!-- <div class="icon"
+          style="width: 50px; height: 50px; margin: 16px;margin-left: 25px; padding: 10px; background-color: white; border-radius: 12px;">
+          <a href="https://www.linkedin.com/in/giang-ho%C3%A0ng-long-878614327/"><i class="fa-brands fa-linkedin"
+              style="z-index: 100000; color: blue; font-size: 30px; margin-left:2px;"></i></a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <!-- thay đổi src ảnh -->
+  <script>
+    function changeImage(imageSrc) {
+      document.getElementById('anhLon').src = imageSrc;
+    }
+    function changeImages(imageSrc) {
+      document.getElementById('anhLon1').src = imageSrc;
+    }
+    function changeImagess(imageSrc) {
+      document.getElementById('anhLon2').src = imageSrc;
+    }
+  </script>
+</body>
+
+</html>

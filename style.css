@@ -1,0 +1,110 @@
+.boxHead{
+    background-color: var(--color-head);
+}
+.main{
+    background-color: var(--color-body);
+}
+body{
+    color: white;
+    background-color: var(--color-body);
+    font-family: Arial, sans-serif;
+}
+.boxHead{
+    margin-top: 0px !important;
+    height: 80px;
+    width: 100%;
+}
+.header{
+    display: flex;
+    align-content: flex-start;
+    height: 60px;
+}
+.GName{
+    margin-top: 10px;
+    margin-left: 50px;
+    font-size: 24px;
+    font-weight: bold;
+}
+sub{
+    font-weight: 100;
+}
+.list{
+    display: flex;
+    list-style-type: none;
+    align-content: flex-start;
+    margin-left: 100px;
+}
+li{
+    margin-top: 30px;
+}
+.new{
+    margin-left: 140px;
+    margin-top: 16px;
+}
+.header .new a{
+    transition: transform 0.3s ease-in-out;
+    font-size: 24px;
+    display: inline-block;
+}
+.header .new a:hover{
+    text-decoration: none;
+    transform: scale(1.4);
+}
+.main{
+    margin-bottom: 50px;
+}
+.info li{
+    margin: 6px;
+}
+.info p{
+    font-size: 16px;
+    font-weight: 200;
+    margin: 16px;
+}
+h2{
+    text-align: center;
+}
+hr{
+    font-size: 100px;
+    font-weight: bold;
+    border-radius: 10px;
+    height: 5px;
+    background-color: white; /* Màu sắc */
+    border: none;
+}
+body {
+    font-family: 'Koulen', sans-serif;
+}
+.icons .icon a i{
+    transition: transform 0.3s ease-in-out;
+}
+.icons .icon a i:hover{
+    transform: scale(1.2);
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .info {
+        width: 90%;
+    }
+    .anhNho img {
+        width: 100px;
+    }
+    .play-button {
+        font-size: 18px;
+    }
+}
+@media (max-width: 480px) {
+    .anhNho img {
+        width: 80px;
+    }
+    .tags ul li {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+    .play-button {
+        font-size: 16px;
+    }
+}
